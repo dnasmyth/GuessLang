@@ -9,6 +9,7 @@ namespace MAlpha
    public class Letter
     {
 
+        double targetFrequnecy;
         double frequency;
         int count;
         char alphaChar;
@@ -44,7 +45,7 @@ namespace MAlpha
             }
         }
 
-        
+
         public double Frequency
         {
             get { return frequency; }
@@ -54,9 +55,21 @@ namespace MAlpha
             }
         }
 
+
+        double targetFrequency;
+        public double TargetFrequency
+        {
+            get { return targetFrequnecy; }
+            set
+            {
+                targetFrequnecy = value;
+            }
+        }
+        
+
         public override string ToString()
         {
-            return $"{AlphaChar} occurred {Count} time and {Frequency.ToString("0.00")} percent";
+            return $"{AlphaChar} occurred {Count} time and {Frequency.ToString("0.00")} percent. Off by {(TargetFrequency - Frequency).ToString("0.00")}";
         }
 
     }
